@@ -35,6 +35,8 @@ extern NSString *const kMagicalRecordImportAttributeUseDefaultValueWhenNotPresen
 
 + (id)MR_importFromObject:(id)data;
 + (id)MR_importFromObject:(id)data inContext:(NSManagedObjectContext *)context;
+- (BOOL)MR_importValuesForKeysWithObject:(id)objectData;
+
 
 + (NSArray *)MR_importFromArray:(id<NSFastEnumeration>)listOfObjectData;
 + (NSArray *)MR_importFromArray:(id<NSFastEnumeration>)listOfObjectData inContext:(NSManagedObjectContext *)context;

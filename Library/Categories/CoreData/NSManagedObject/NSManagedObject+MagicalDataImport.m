@@ -88,21 +88,21 @@ NSString *const kMagicalRecordImportAttributeUseDefaultValueWhenNotPresent = @"u
     if ([relationshipInfo isToMany])
     {
         addRelationMessageFormat = @"add%@Object:";
-        if ([relationshipInfo respondsToSelector:@selector(isOrdered)] && [relationshipInfo isOrdered])
-        {
-            //Need to get the ordered set
-            NSString *selectorName = [[relationshipInfo name] stringByAppendingString:@"Set"];
-            SEL selector = NSSelectorFromString(selectorName);
-            NSInvocation *invocation = [NSInvocation invocationWithMethodSignature:[self methodSignatureForSelector:selector]];
-            [invocation setSelector:selector];
-            [invocation invokeWithTarget:self];
+        // if ([relationshipInfo respondsToSelector:@selector(isOrdered)] && [relationshipInfo isOrdered])
+        // {
+        //     //Need to get the ordered set
+        //     NSString *selectorName = [[relationshipInfo name] stringByAppendingString:@"Set"];
+        //     SEL selector = NSSelectorFromString(selectorName);
+        //     NSInvocation *invocation = [NSInvocation invocationWithMethodSignature:[self methodSignatureForSelector:selector]];
+        //     [invocation setSelector:selector];
+        //     [invocation invokeWithTarget:self];
             
-            __unsafe_unretained id orderedSet;
-            [invocation getReturnValue:&orderedSet];
-            relationshipSource = orderedSet;
+        //     __unsafe_unretained id orderedSet;
+        //     [invocation getReturnValue:&orderedSet];
+        //     relationshipSource = orderedSet;
 
-            addRelationMessageFormat = @"addObject:";
-        }
+        //     addRelationMessageFormat = @"addObject:";
+        // }
     }
 
 #pragma clang diagnostic push
