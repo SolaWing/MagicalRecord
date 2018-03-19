@@ -10,7 +10,7 @@ for scheme in 'MagicalRecord static library for iOS'; do
     xcodebuild                                                      \
         -workspace $projectName.xcodeproj/project.xcworkspace       \
         -scheme "$scheme"                                           \
-        -destination 'platform=iOS Simulator,name=iPhone 5'         \
+        -destination 'platform=iOS Simulator,name=iPhone SE'         \
         -destination 'generic/platform=iOS'                         \
         -configuration $configuration                               \
         SYMROOT="$PWD/build"                                        \
